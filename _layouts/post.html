@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} · {{ site.title }}</title>
+  {% assign geo_modified = page.updated | default: page.date %}
+  {% include head-geo.html %}
+  {% include schema-jsonld.html %}
+  <link rel="stylesheet" href="{{ '/assets/css/geo.css' | relative_url }}">
+  <link rel="icon" href="{{ site.favicon | default: '/favicon.ico' | relative_url }}">
+</head>
+<body class="geo-body">
+  <div class="geo-wrap">
+    <p class="geo-site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+    <p class="geo-tagline">{{ site.description }}</p>
+    <article class="geo-article" itemscope itemtype="https://schema.org/BlogPosting">
+      <header>
+        <h1 itemprop="headline">{{ page.title }}</h1>
+        <div class="geo-meta">
+          {% if page.date %}
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              发布 {{ page.date | date: "%Y-%m-%d" }}
+            </time>
+          {% endif %}
+          {% if page.updated and page.updated != page.date %}
+            <time datetime="{{ page.updated | date_to_xmlschema }}" itemprop="dateModified">
+              {{ page.updated | date: "%Y-%m-%d" }}
+            </time>
+          {% endif %}
+          {% if site.author.name %}
+            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+              · <span itemprop="name">{{ site.author.name }}</span>
+            </span>
+          {% endif %}
+        </div>
+        {% if page.description %}
+          <p class="geo-lead" style="color:#57606a;font-size:1.05rem;">{{ page.description }}</p>
+        {% endif %}
+      </header>
+      <div class="geo-content" itemprop="articleBody">
+        {{ content }}
+      </div>
+    </article>
+    <footer class="geo-footer-nav">
+      <a href="{{ '/' | relative_url }}">← 返回文章目录</a>
+    </footer>
+  </div>
+</body>
+</html>

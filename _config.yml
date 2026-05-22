@@ -1,14 +1,36 @@
 theme: jekyll-theme-Architect
 encoding: utf-8
+lang: zh-CN
 title: 一个人的对冲基金
-description: AI为个体赋能
+description: 个人量化、小资金对冲与 AI 赋能实践笔记
 favicon: /favicon.ico
 
 url: https://alphaveteran.github.io
 baseurl: /dev2hedge
 
+author:
+  name: Ada Li
+  url: https://alphaveteran.github.io/dev2hedge/
+  email: alphaoldie@gmail.com
+  same_as:
+    - https://github.com/AlphaVeteran
+
 plugins:
   - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
 
 paginate: 20
 paginate_path: "/page:num/"
+
+feed:
+  path: feed.xml
+  title: dev2hedge
+  description: 个人量化、小资金对冲与 AI 赋能
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post

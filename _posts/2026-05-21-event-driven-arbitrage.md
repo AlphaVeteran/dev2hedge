@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 用 Python 编写适合个人或小资金的事件驱动型套利策略框架
 date: 2026-05-21
 ---

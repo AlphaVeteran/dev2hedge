@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "DeepSeek给的一年计划"
 date: 2026-05-18
 ---

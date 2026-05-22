@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "deepseek给的30天自学计划"
 date: 2026-05-18
 ---

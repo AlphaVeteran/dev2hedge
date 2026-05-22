@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 用jekyll添加分页功能
 date: 2026-05-18
 ---

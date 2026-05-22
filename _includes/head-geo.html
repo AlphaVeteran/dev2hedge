@@ -1,0 +1,24 @@
+{% assign geo_title = page.title | default: site.title %}
+{% assign geo_desc = page.description | default: site.description %}
+{% if geo_desc == site.description and page.excerpt %}
+  {% assign geo_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 %}
+{% endif %}
+{% assign geo_url = page.url | default: '/' | absolute_url %}
+{% assign geo_modified = page.updated | default: page.date %}
+<link rel="canonical" href="{{ geo_url }}">
+<meta name="description" content="{{ geo_desc | escape }}">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ geo_title | escape }}">
+<meta property="og:description" content="{{ geo_desc | escape }}">
+<meta property="og:url" content="{{ geo_url }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+{% if page.date %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
+{% if geo_modified %}
+<meta property="article:modified_time" content="{{ geo_modified | date_to_xmlschema }}">
+{% endif %}
+{% if site.author.name %}
+<meta name="author" content="{{ site.author.name | escape }}">
+{% endif %}

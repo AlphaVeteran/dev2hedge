@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: "首页" }} · {{ site.title }}</title>
+  {% include head-geo.html %}
+  {% include schema-jsonld.html %}
+  <link rel="stylesheet" href="{{ '/assets/css/geo.css' | relative_url }}">
+  <link rel="icon" href="{{ site.favicon | default: '/favicon.ico' | relative_url }}">
+</head>
+<body class="geo-body">
+  <div class="geo-wrap">
+    <h1 class="geo-site-title" style="font-size:1.75rem;">{{ site.title }}</h1>
+    <p class="geo-tagline">{{ site.description }}</p>
+    <main>
+      {{ content }}
+    </main>
+    {% if site.author.name %}
+    <footer class="geo-footer-nav" style="margin-top:2rem;">
+      <span>作者 {{ site.author.name }}</span>
+      {% if site.author.same_as.first %}
+        · <a href="{{ site.author.same_as.first }}" rel="me">GitHub</a>
+      {% endif %}
+    </footer>
+    {% endif %}
+  </div>
+</body>
+</html>

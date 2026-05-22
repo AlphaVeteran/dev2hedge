@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: obsidian在github上的备份
 date: 2026-05-18
 ---

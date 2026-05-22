@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 个人vs机构
 date: 2026-05-21
 ---
