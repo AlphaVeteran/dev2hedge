@@ -11,8 +11,9 @@
 ## 工作流
 
 1. 在 Obsidian 打开本目录作为库根目录
-2. 在 `_posts/` 写作；新建文用 `_templates/Jekyll模板.md`（含 `description` 等字段）
-3. 推送到 `main` 后 GitHub Actions 自动部署
+2. 启用社区插件 **Git**（配置已写在 `.obsidian/`，约每 10 分钟自动 commit + push）
+3. 在 `_posts/` 写作；新建文用 `_templates/Jekyll模板.md`（含 `description` 等字段）
+4. 推送到 `main` 后 GitHub Pages 自动构建（详见 [DEV2HEDGE.md](DEV2HEDGE.md)）
 
 详见 [DEV2HEDGE.md](DEV2HEDGE.md)。
 
