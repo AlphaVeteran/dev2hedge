@@ -1,0 +1,13 @@
+# Obsidian
+.obsidian/
+
+# macOS
+.DS_Store
+
+# iCloud placeholders
+*.icloud
+
+# local Jekyll
+.gem-local/
+_site/
+_site-test/

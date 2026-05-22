@@ -1,0 +1,14 @@
+theme: jekyll-theme-Architect
+encoding: utf-8
+title: 一个人的对冲基金
+description: AI为个体赋能
+favicon: /favicon.ico
+
+url: https://alphaveteran.github.io
+baseurl: /dev2hedge
+
+plugins:
+  - jekyll-paginate
+
+paginate: 20
+paginate_path: "/page:num/"

@@ -1,0 +1,37 @@
+---
+layout: default
+title: "首页"
+---
+
+## 📚 文章目录
+
+<ul>
+  {% for post in paginator.posts %}
+    <li>
+      <span style="color: #666; font-size: 0.9em;">{{ post.date | date: "%Y-%m-%d" }}</span> — 
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<hr>
+
+{% if paginator.total_pages > 1 %}
+<div class="pagination" style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+  
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">« 上一页</a>
+  {% else %}
+    <span class="previous disabled" style="color: #ccc;">« 上一页</span>
+  {% endif %}
+
+  <span class="page_number">第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页</span>
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="next">下一页 »</a>
+  {% else %}
+    <span class="next disabled" style="color: #ccc;">下一页 »</span>
+  {% endif %}
+
+</div>
+{% endif %}
