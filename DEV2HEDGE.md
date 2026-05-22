@@ -2,9 +2,31 @@
 
 ## Obsidian 配置
 
-1. **核心插件** → 启用 **模板**
-2. 模板文件夹：`_templates`
-3. 新建 `_posts` 文章时插入 **Jekyll模板**
+1. **核心插件** → 启用 **模板**（模板文件夹：`_templates`）
+2. **社区插件** → 安装并启用 **Templater**（配置已预写在 `.obsidian/plugins/templater-obsidian/data.json`）
+3. 确认 Templater 设置与下表一致（一般安装后自动读取）
+
+### 新建 `_posts` 笔记时自动套用 GEO 模板（Templater 文件夹模板）
+
+| Templater 设置项 | 值 |
+|------------------|-----|
+| Trigger Templater on new file creation | **开** |
+| Enable Folder Templates | **开** |
+| Folder | `_posts` |
+| Template | `_templates/Jekyll模板-Templater.md` |
+
+**正确新建方式（会自动插入模板）：**
+
+1. 在左侧文件列表进入 **`_posts` 文件夹**
+2. 点「新建笔记」或 `Cmd+N`（`app.json` 已设默认在 `_posts` 创建）
+3. **文件名**用 Jekyll 格式：`YYYY-MM-DD-英文slug.md`（例：`2026-05-22-personal-hedge.md`）
+4. 文首应自动出现 front matter +「一句话」+「常见问题」占位
+
+若未自动插入：`Cmd+P` → **Templater: Replace templates in the active file**（快捷键 `Cmd+Shift+T`）。
+
+**不要**在仓库根目录新建文章；根目录不会触发 `_posts` 模板。
+
+**手动插入（无 Templater 时）：** `Cmd+Alt+T` → 选 **Jekyll模板**（核心模板，`{{date}}` 语法）。
 
 ### Obsidian Git（已预配置，见 `.obsidian/plugins/obsidian-git/data.json`）
 
